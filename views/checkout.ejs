@@ -1,0 +1,50 @@
+<%- include('partials/header'); %>
+<div id="cssGrid">
+  <header><h1> Brewbean's Coffee Shop </h1> </header>
+    <nav>
+	<ul>
+      <li><a href="">Home</a></li>
+      <li><a href="">Create Product</a></li>
+      <li><a href="">Edit Product</a></li>
+      <li><a href="">Basket</a></li>
+      <li><a href="">Check Out</a></li>
+      <li><a href="">Search</a></li>
+      <li><a href="">Account</a></li>
+      <li><a href="">Order Status</a></li>
+	 </ul>
+    </nav>
+    <main>
+        <h4><%= title %></h4>
+        <br>
+        <br>
+        <table>
+        <%  for(let idx =0; idx < items.length; idx++ ){  %>
+            <tr class="text-center">
+              <td scope="row"><%= items[idx].id%></td>
+              <td><%= items[idx].Name%></td>
+              <td><%= items[idx].Options%></td>
+              <td><input type="number" value="<%= items[idx].Qty%>"></td>
+              <td><%= items[idx].Price%></td>
+              <td><%= items[idx].Total%></td>
+            </tr>     
+            <%  } %> 
+            <tr>
+            <th>Subtotal:</th>
+            <td>Value</td>
+        </tr>
+    </table>
+        <form method="post">
+            <label for="state">State:</label>
+            <input type="text" id="state", name="state" required>
+            <label for="subtotal">Subtotal:</label>
+            <input type="text" id="subtotal", name="subtotal" required>
+            <button type="submit">Calculate Total with Tax</button>
+        </form>
+        <br>
+        <br>
+        <p><b>Total:</b> Value</p>
+        <br>
+        <br>
+    </main>
+</div>
+<%- include('partials/footer'); %>
