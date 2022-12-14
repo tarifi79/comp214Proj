@@ -19,7 +19,6 @@
         <tr class="text-center">
             <th scope="row">Item Code</th>
             <th>Name</th>
-            <th>Options</th>
             <th>Qty</th>
             <th>Price</th>
           </tr>  
@@ -28,11 +27,10 @@
     
         <%  for(let idx =0; idx < items.length; idx++ ){  %>
             <tr class="text-center">
-              <td scope="row"><%= items[idx].id%></td>
-              <td><%= items[idx].Name%></td>
-              <td><%= items[idx].Options%></td>
-              <td><input type="number" value="<%= items[idx].Qty%>"></td>
-              <td>$<%= items[idx].Price%></td>
+              <td scope="row"><%= items[idx].IDPRODUCT%></td>
+              <td><%= items[idx]PRODUCTNAME%></td>
+              <td><input type="number"></td>
+              <td>$<%= items[idx].PRICE%></td>
               <td class="text-center"><a href=""> Remove</a></td> 
             </tr>     
             <%  } %> 
@@ -45,10 +43,10 @@
         </tr>
     </table>
         <form method="post">
-            <label for="state">State:</label>
-            <input type="text" id="state", name="state" required>
-            <label for="subtotal">Subtotal:</label>
-            <input type="text" id="subtotal", name="subtotal" required>
+            <label for="SHIPSTATE">State:</label>
+            <input type="text" id="SHIPSTATE", name="SHIPSTATE" required>
+            <label for="SUBTOTAL">Subtotal:</label>
+            <input type="text" id="SUBTOTAL", name="SUBTOTAL" required>
             <button type="submit">Calculate Total with Tax</button>
         </form>
         <br>

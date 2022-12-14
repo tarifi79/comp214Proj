@@ -16,23 +16,23 @@
         <br>
         <br>
         <form method="post">
-            <label for="name">Name:</label>
-            <input type="text" id="name", name="name" required>
+            <label for="productname">Name:</label>
+            <input type="text" id="productname", name="productname" required>
             <label for="description">Description:</label>
             <input type="text" id="description", name="description" required>
             <label for="image">Image:</label>
             <input type="text" id="image", name="image" required>
             <label for="price">Price:</label>
             <input type="number" id="price", name="price" required>
-            <label for="status">Status:</label>
-            <input type="text" id="status", name="status" required>
+            <label for="active">Status:</label>
+            <input type="number" id="active", name="active" required>
             <button type="submit">Add Item</button>
         </form>
         <br>
         <br>
         <table>
             <tr class="text-center">
-                <th scope="row">Item Code</th>
+                <th>Item Code</th>
                 <th>Name</th>
                 <th>Description</th>
                 <th>Image</th>
@@ -41,12 +41,12 @@
               </tr>  
         <%  for(let idx =0; idx < items.length; idx++ ){  %>
             <tr class="text-center">
-              <td scope="row"><%= items[idx].id%></td>
-              <td><%= items[idx].Name%></td>
-              <td><%= items[idx].Description%></td>
-              <td><%= items[idx].Image%></td>
-              <td>$<%= items[idx].Price%></td>
-              <td><%= items[idx].Status%></td>
+              <td scope="row"><%= items[idx].IDPRODUCT%></td>
+              <td><%= items[idx]PRODUCTNAME%></td>
+              <td><%= items[idx].DESCRIPTION%></td>
+              <td><%= items[idx].PRODUCTIMAGE%></td>
+              <td>$<%= items[idx].PRICE%></td>
+              <td><%= items[idx].ACTIVE%></td>
             </tr>     
             <%  } %> 
         </table>
