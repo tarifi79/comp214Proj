@@ -1,36 +1,47 @@
 <%- include('partials/header'); %>
 <div id="cssGrid">
   <header><h1> Brewbean's Coffee Shop </h1> </header>
-    <nav>
+  <nav>
 	<ul>
-      <li><a href="">Home</a></li>
-      <li><a href="">Create Product</a></li>
-      <li><a href="">Edit Product</a></li>
-      <li><a href="">Basket</a></li>
-      <li><a href="">Check Out</a></li>
-      <li><a href="">Search</a></li>
-      <li><a href="">Account</a></li>
-      <li><a href="">Order Status</a></li>
+      <li><a href="/">Home</a></li>
+      <li><a href="/createproduct">Create Product</a></li>
+      <li><a href="/editproduct">Edit Product</a></li>
+      <li><a href="/basket">Basket</a></li>
+      <li><a href="/reports">Reports</a></li>
+      <li><a href="/updatestatus">Order Status</a></li>
 	 </ul>
     </nav>
     <main>
-        <h4><%= title %></h4>
+        <h5><span lang="en-ca">Click <a href="/">here</a> to continue shopping</span></h5>
         <br>
         <br>
         <table>
+        <tr class="text-center">
+            <th scope="row">Item Code</th>
+            <th>Name</th>
+            <th>Options</th>
+            <th>Qty</th>
+            <th>Price</th>
+          </tr>  
+        <%= console.log('items', items)%>
+        <%= console.log('items.length', items.length)%>
+    
         <%  for(let idx =0; idx < items.length; idx++ ){  %>
             <tr class="text-center">
               <td scope="row"><%= items[idx].id%></td>
               <td><%= items[idx].Name%></td>
               <td><%= items[idx].Options%></td>
               <td><input type="number" value="<%= items[idx].Qty%>"></td>
-              <td><%= items[idx].Price%></td>
-              <td><%= items[idx].Total%></td>
+              <td>$<%= items[idx].Price%></td>
+              <td class="text-center"><a href=""> Remove</a></td> 
             </tr>     
             <%  } %> 
-            <tr>
-            <th>Subtotal:</th>
-            <td>Value</td>
+                <td>
+            <button  type="submit">Update Basket</button>
+        </td>
+        <td>
+            <button  type="submit">Empty Basket</button>
+        </td>
         </tr>
     </table>
         <form method="post">
@@ -42,7 +53,7 @@
         </form>
         <br>
         <br>
-        <p><b>Total:</b> Value</p>
+        <p><b>Total:</b> $Value</p>
         <br>
         <br>
     </main>

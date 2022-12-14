@@ -1,0 +1,39 @@
+<%- include('partials/header'); %>
+<div id="cssGrid">
+  <header><h1> Brewbean's Coffee Shop </h1> </header>
+  <nav>
+	<ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/createproduct">Create Product</a></li>
+      <li><a href="/editproduct">Edit Product</a></li>
+      <li><a href="/basket">Basket</a></li>
+      <li><a href="/reports">Reports</a></li>
+      <li><a href="/updatestatus">Order Status</a></li>
+	 </ul>
+    </nav>
+    <main>
+        <h4><%= title %></h4>
+        <table>
+            <tr class="text-center">
+                <th>Basket</th>
+                <th>Date Shipped</th>
+                <th>Notes</th>
+                <th>Shipper</th>
+                <th>Tracking Number</th>
+              </tr> 
+              <form method="post">
+        <%  for(let idx =0; idx < items.length; idx++ ){  %>
+            <tr class="text-center">
+              <td><input value="<%= items[idx].IDBASKET%>"></td>
+              <td><input type="date" value="<%= items[idx].DTSTAGE%>"></td>
+              <td><textarea value="<%= items[idx].NOTES%>"></textarea></td>
+              <td><input value="<%= items[idx].SHIPPER%>"></td>
+              <td><input value="<%= items[idx].SHIPINGNUM%>"></td>
+              <td><button type="submit">Update Status</button></td>
+            </tr>     
+            <%  } %> 
+        </table>
+    </form> 
+    </main>
+</div>
+<%- include('partials/footer'); %>

@@ -1,20 +1,20 @@
 <%- include('partials/header'); %>
 <div id="cssGrid">
   <header><h1> Brewbean's Coffee Shop </h1> </header>
-    <nav>
-	<ul>
-      <li><a href="">Home</a></li>
-      <li><a href="">Create Product</a></li>
-      <li><a href="">Edit Product</a></li>
-      <li><a href="">Basket</a></li>
-      <li><a href="">Check Out</a></li>
-      <li><a href="">Search</a></li>
-      <li><a href="">Account</a></li>
-      <li><a href="">Order Status</a></li>
-	 </ul>
-    </nav>
+  <nav>
+    <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/createproduct">Create Product</a></li>
+        <li><a href="/editproduct">Edit Product</a></li>
+        <li><a href="/basket">Basket</a></li>
+        <li><a href="/reports">Reports</a></li>
+        <li><a href="/updatestatus">Order Status</a></li>
+     </ul>
+      </nav>
     <main>
         <h4><%= title %></h4>
+        <br>
+        <br>
     <table>
     <tr class="text-center">
         <th>Item Code</th>
@@ -24,14 +24,12 @@
     <%= console.log('items.length', items.length)%>
 
         <tr class="text-center">
-          <td scope="row"><%= items.id%></td>
+          <td><input type="number" value="<%= items.id%>"></td>
           <td><input type="text" value="<%= items.Description%>"></td>
+          <td>
+            <button  type="submit">Update Product</button>
+        </td>
         </tr>     
-        <tr>
-            <td>
-        <button  type="submit">Update Product</button>
-    </td>
-    </tr>
 </table>
     </main>
 </div>

@@ -1,0 +1,43 @@
+<%- include('partials/header'); %>
+<div id="cssGrid">
+  <header><h1> Brewbean's Coffee Shop </h1> </header>
+  <nav>
+	<ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="/createproduct">Create Product</a></li>
+      <li><a href="/editproduct">Edit Product</a></li>
+      <li><a href="/basket">Basket</a></li>
+      <li><a href="/reports">Reports</a></li>
+      <li><a href="/updatestatus">Order Status</a></li>
+	 </ul>
+    </nav>
+    <main>
+        <h4><%=title%></h4>
+    <br>
+    <br>
+    <table>
+    <tr class="text-center">
+        <th scope="row">Item Code</th>
+        <th>Name</th>
+        <th>Options</th>
+        <th>Qty</th>
+        <th>Price</th>
+      </tr>  
+    <%= console.log('items', items)%>
+    <%= console.log('items.length', items.length)%>
+
+    <%  for(let idx =0; idx < items.length; idx++ ){  %>
+        <tr class="text-center">
+          <td scope="row"><%= items[idx].id%></td>
+          <td><%= items[idx].Name%></td>
+          <td><%= items[idx].Options%></td>
+          <td><input type="number" value="<%= items[idx].Qty%>"></td>
+          <td>$<%= items[idx].Price%></td>
+          <td><button  type="button">Add to Basket</button></td>
+          <td><button  type="button">Check Sale</button></td>
+        </tr>     
+        <%  } %> 
+</table>
+    </main>
+</div>
+<%- include('partials/footer'); %>
