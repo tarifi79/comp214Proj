@@ -22,15 +22,13 @@
         <th>Qty</th>
         <th>Price</th>
       </tr>  
-    <%= console.log('items', items)%>
-    <%= console.log('items.length', items.length)%>
 
     <%  for(let idx =0; idx < items.length; idx++ ){  %>
         <tr class="text-center">
-          <td scope="row"><%= items[idx].IDPRODUCT%></td>
-          <td><%= items[idx]PRODUCTNAME%></td>
+          <td><%= items[idx].IDPRODUCT %></td>
+          <td><%= items[idx].PRODUCTNAME %></td>
           <td><input type="number"></td>
-          <td>$<%= items[idx].PRICE%></td>
+          <td><%= items[idx].PRICE %></td>
           <td><button  type="button">Add to Basket</button></td>
           <td><button  type="button">Check Sale</button></td>
         </tr>     
